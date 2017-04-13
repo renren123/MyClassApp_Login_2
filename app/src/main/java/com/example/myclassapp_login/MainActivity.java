@@ -3,6 +3,10 @@ package com.example.myclassapp_login;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.RadialGradient;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.print.PrintAttributes;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
@@ -20,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     EditText myAccount=null;
     EditText myPassword=null;
     Button buttonOK;
+    private Window window;
+
 
     String accountName = "renwenjie",accountPassword = "123456";
 
@@ -58,7 +64,8 @@ public class MainActivity extends AppCompatActivity {
 //        });
 
         setContentView(R.layout.activity_main);
-        //init();                 //第一次学习的方法
+        //init();
+        // 第一次学习的方法
         Paint_Password();
     }
 
@@ -75,13 +82,22 @@ public class MainActivity extends AppCompatActivity {
         myAccount = new EditText(this);
         myAccount.setTextSize(passWordTextSize);
         myAccount.setHint("Account");
-        linearLayout.addView(myAccount);
+        //myAccount.m
+        LinearLayout.LayoutParams lp2 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        lp2.setMargins(20,10,0,0);
+        myAccount.setBackground(null);
+
+
+        myAccount.setLeft(16);
+        linearLayout.addView(myAccount,lp2);
 
         myPassword = new EditText(this);
+        myPassword.setBackground(null);
         myPassword.setInputType(129); //129????????????????????   密码框？？？
         myPassword.setTextSize(passWordTextSize);
         myPassword.setHint("Password");
-        linearLayout.addView(myPassword);
+        linearLayout.addView(myPassword,lp2);
+
 
 //        Button buttonOK = new Button(this);
 //        buttonOK.setText("确认");

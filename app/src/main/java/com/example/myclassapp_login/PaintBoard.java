@@ -35,7 +35,7 @@ public class PaintBoard extends View {
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(10);
         paint.setAntiAlias(true);// 设置画笔的锯齿效果。 true是去除，大家一看效果就明白了
-        canvas.drawCircle(105, 105, 100, paint);
+        canvas.drawCircle(105, 105, 98, paint);
 
         //paint string
         paint = new Paint();
